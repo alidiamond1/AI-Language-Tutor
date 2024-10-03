@@ -400,11 +400,12 @@ export function LanguageTutorComponent() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-          <Progress 
-            value={progress} 
-            className="w-full h-6 bg-yellow-100 dark:bg-yellow-900/30" 
-            barClassName="bg-gradient-to-r from-yellow-400 to-orange-500" 
-          />
+          <div className="relative w-full h-6 bg-yellow-100 dark:bg-yellow-900/30 rounded-full overflow-hidden">
+            <div 
+              className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-300 ease-in-out"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
           <p className="text-center mt-2 text-sm font-medium text-yellow-600 dark:text-yellow-400">{progress}% Complete</p>
         </CardContent>
       </Card>
